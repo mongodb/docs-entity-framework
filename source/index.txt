@@ -6,7 +6,6 @@
 
    /quick-start
    /quick-reference
-   /issues-and-help
 
 Introduction
 ------------
