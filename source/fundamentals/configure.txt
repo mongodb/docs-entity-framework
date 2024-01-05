@@ -1,0 +1,95 @@
+.. _entity-framework-configure:
+
+===========================================
+Configure Entity Framework Core for MongoDB
+===========================================
+
+.. facet::
+   :name: genre
+   :values: reference
+
+.. meta::
+   :keywords: EF, EF Core 
+
+.. contents:: On this page
+   :local:
+   :backlinks: none
+   :depth: 2
+   :class: singlecol
+
+In this guide, you will learn how to configure an application to use the
+{+provider-long+}. To learn how to set up a new project and install the
+{+provider-short+}, see the :ref:`entity-framework-quickstart`.
+
+Create a POCO
+-------------
+
+Create a `Plain old CLR/Class object
+<https://en.wikipedia.org/wiki/Plain_old_CLR_object>`__, or **POCO**, to use as
+a model for your entity. A POCO is a simple class object that doesn't inherit
+features from any framework-specific base classes or interfaces.
+
+To learn more about POCOs, see the .NET/C# :driver:`POCO guide </csharp/current/fundamentals/serialization/poco/>`.
+
+The following code example shows how to create a Customer POCO:
+
+.. literalinclude:: /includes/fundamentals/code-examples/configure/ConfigureEFProvider.cs
+   :start-after: start-customer
+   :end-before: end-customer
+   :language: csharp
+   :copyable:
+
+Create a DB Context Class
+-------------------------
+
+To begin using Entity Framework, create a class that derives from 
+`DBContext <https://learn.microsoft.com/en-us/dotnet/api/system.data.entity.dbcontext>`__.
+The ``DBContext`` class represents a session with the database and is used to
+query and save instances of your entities.
+
+The ``DBContext`` class exposes ``DBSet`` properties that specify the entities you
+can interact with while using that context.
+
+The following example creates a ``DBContext`` class and specifies the
+``Customer`` object as the ``DBSet`` property:
+
+.. literalinclude:: /includes/fundamentals/code-examples/configure/ConfigureEFProvider.cs
+   :start-after: start-db-context
+   :end-before: end-db-context
+   :language: csharp
+   :copyable:
+
+The previous code example overrides the ``OnModelCreating()`` method. Overriding
+the ``OnModelCreating`` method allows you to specify configuration for your
+model and its properties. The example uses the ``ToCollection()`` method to
+specify that the ``Customer`` entity should map to the ``customers`` collection.
+
+Use MongoDB
+-----------
+
+Once you have created a ``DBContext`` class, pass the ``UseMongoDB()`` method to
+the ``DbContext`` class to begin using the {+provider-long+}. Pass the
+``UseMongoDB()`` method as show in the following example:
+
+.. literalinclude:: /includes/fundamentals/code-examples/configure/ConfigureEFProvider.cs
+   :start-after: start-use-mongodb
+   :end-before: end-use-mongodb
+   :language: csharp
+   :copyable:
+
+.. tip:: Connection URI
+
+   The {+provider-short+} allows you to access methods from
+   the MongoDB {+csharp-driver-long+} in your application. To learn how to
+   use a connection URI to connect to MongoDB with the {+csharp-driver-long+} see the 
+   :driver:`.NET/C# Connection guide </csharp/current/fundamentals/connection/connect/>`.
+
+Full Example
+------------
+
+The following code shows a full example of how to configure an application to
+use the {+provider-long+}:
+
+.. literalinclude:: /includes/fundamentals/code-examples/configure/ConfigureEFProvider.cs
+   :language: csharp
+   :copyable:
