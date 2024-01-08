@@ -29,7 +29,9 @@ Create a `Plain old CLR/Class object
 a model for your entity. A POCO is a simple class object that doesn't inherit
 features from any framework-specific base classes or interfaces.
 
-To learn more about POCOs, see the .NET/C# :driver:`POCO guide </csharp/current/fundamentals/serialization/poco/>`.
+To learn more about POCOs, see the :driver:`POCO guide
+</csharp/current/fundamentals/serialization/poco/>` in the
+{+csharp-driver-short+} documentation.
 
 The following code example shows how to create a Customer POCO:
 
