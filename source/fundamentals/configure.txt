@@ -62,7 +62,7 @@ The following example creates a ``DBContext`` class and specifies the
    :copyable:
 
 This code example overrides the ``OnModelCreating()`` method. Overriding
-the ``OnModelCreating`` method allows you to specify configuration details for your
+the ``OnModelCreating()`` method allows you to specify configuration details for your
 model and its properties. This example uses the ``ToCollection()`` method to
 specify that the ``Customer`` entity should map to the ``customers`` collection.
 
@@ -84,12 +84,14 @@ Pass the ``UseMongoDB()`` method as show in the following example:
    :language: csharp
    :copyable:
 
-.. tip:: Connection URI
+.. tip:: Creating a MongoClient
 
    The {+provider-short+} allows you to access methods from
    the {+csharp-driver-long+} in your application. The previous example uses the
    ``MongoClient()`` method from the {+csharp-driver-short+} to create a MongoDB
-   client that connects to a MongoDB instance. To learn more about connecting to
+   client that connects to a MongoDB instance. 
+   
+   To learn more about connecting to
    MongoDB with the {+csharp-driver-long+} see the 
    :driver:`Connection guide </csharp/current/fundamentals/connection/connect/>`
    in the {+csharp-driver-short+} documentation.
