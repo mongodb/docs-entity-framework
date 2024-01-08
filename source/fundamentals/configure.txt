@@ -59,17 +59,22 @@ The following example creates a ``DBContext`` class and specifies the
    :language: csharp
    :copyable:
 
-The previous code example overrides the ``OnModelCreating()`` method. Overriding
-the ``OnModelCreating`` method allows you to specify configuration for your
-model and its properties. The example uses the ``ToCollection()`` method to
+This code example overrides the ``OnModelCreating()`` method. Overriding
+the ``OnModelCreating`` method allows you to specify configuration details for your
+model and its properties. This example uses the ``ToCollection()`` method to
 specify that the ``Customer`` entity should map to the ``customers`` collection.
+
+.. TODO: Link to a page that goes over methods available to use in OnModelCreating
 
 Use MongoDB
 -----------
 
 Once you have created a ``DBContext`` class, pass the ``UseMongoDB()`` method to
-the ``DbContext`` class to begin using the {+provider-long+}. Pass the
-``UseMongoDB()`` method as show in the following example:
+the ``DbContext`` class to begin using the {+provider-long+}. The
+``UseMongoDB()`` method takes two parameters: a ``MongoClient`` instance, and
+the name of the database that stores the collections you are working with.
+
+Pass the ``UseMongoDB()`` method as show in the following example:
 
 .. literalinclude:: /includes/fundamentals/code-examples/configure/ConfigureEFProvider.cs
    :start-after: start-use-mongodb
@@ -80,12 +85,14 @@ the ``DbContext`` class to begin using the {+provider-long+}. Pass the
 .. tip:: Connection URI
 
    The {+provider-short+} allows you to access methods from
-   the MongoDB {+csharp-driver-long+} in your application. To learn how to
-   use a connection URI to connect to MongoDB with the {+csharp-driver-long+} see the 
+   the {+csharp-driver-long+} in your application. The previous example uses the
+   ``MongoClient()`` method from the {+csharp-driver-short+} to create a MongoDB
+   client that connects to a MongoDB instance. To learn more about connecting to
+   MongoDB with the {+csharp-driver-long+} see the 
    :driver:`.NET/C# Connection guide </csharp/current/fundamentals/connection/connect/>`.
 
-Full Example
-------------
+Example
+-------
 
 The following code shows a full example of how to configure an application to
 use the {+provider-long+}:

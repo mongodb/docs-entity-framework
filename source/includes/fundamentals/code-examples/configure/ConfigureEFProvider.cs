@@ -19,7 +19,7 @@ db.Customers.Add(new Customer() { name = "John Doe", Order = "1 Green Tea" });
 db.SaveChanges();
 
 // start-customer
-public class Customer
+internal class Customer
 {
     public ObjectId Id { get; set; }
     public String Name { get; set; }
