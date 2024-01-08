@@ -89,7 +89,8 @@ Pass the ``UseMongoDB()`` method as show in the following example:
    ``MongoClient()`` method from the {+csharp-driver-short+} to create a MongoDB
    client that connects to a MongoDB instance. To learn more about connecting to
    MongoDB with the {+csharp-driver-long+} see the 
-   :driver:`.NET/C# Connection guide </csharp/current/fundamentals/connection/connect/>`.
+   :driver:`Connection guide </csharp/current/fundamentals/connection/connect/>`
+   in the {+csharp-driver-short+} documentation.
 
 Example
 -------
