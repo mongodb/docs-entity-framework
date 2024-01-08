@@ -29,35 +29,37 @@ Create a `Plain old CLR/Class object
 a model for your entity. A POCO is a simple class object that doesn't inherit
 features from any framework-specific base classes or interfaces.
 
-To learn more about POCOs, see the :driver:`POCO guide
-</csharp/current/fundamentals/serialization/poco/>` in the
-{+csharp-driver-short+} documentation.
-
-The following code example shows how to create a Customer POCO:
+The following code example shows how to create a POCO that represents a customer:
 
 .. literalinclude:: /includes/fundamentals/code-examples/configure/Customer.cs
    :language: csharp
    :copyable:
 
+.. tip::
+
+   To learn more about POCOs, see the :driver:`POCO guide
+   </csharp/current/fundamentals/serialization/poco/>` in the
+   {+csharp-driver-short+} documentation.
+
 Create a DB Context Class
 -------------------------
 
-To begin using Entity Framework, create a class that derives from 
+To begin using {+framework-core+}, create a class that derives from 
 `DBContext <https://learn.microsoft.com/en-us/dotnet/api/system.data.entity.dbcontext>`__.
-The ``DBContext`` class represents a session with the database and is used to
+The ``DBContext`` class represents a database session and is used to
 query and save instances of your entities.
 
 The ``DBContext`` class exposes ``DBSet`` properties that specify the entities you
 can interact with while using that context.
 
 The following example creates a ``DBContext`` class and specifies the
-``Customer`` object as the ``DBSet`` property:
+``Customer`` object as a ``DBSet`` property:
 
 .. literalinclude:: /includes/fundamentals/code-examples/configure/MyDBContext.cs
    :language: csharp
    :copyable:
 
-This code example overrides the ``OnModelCreating()`` method. Overriding
+The previous code example overrides the ``OnModelCreating()`` method. Overriding
 the ``OnModelCreating()`` method allows you to specify configuration details for your
 model and its properties. This example uses the ``ToCollection()`` method to
 specify that the ``Customer`` entity should map to the ``customers`` collection.
@@ -67,12 +69,17 @@ specify that the ``Customer`` entity should map to the ``customers`` collection.
 Use MongoDB
 -----------
 
-Once you have created a ``DBContext`` class, pass the ``UseMongoDB()`` method to
-the ``DbContext`` class to begin using the {+provider-long+}. The
-``UseMongoDB()`` method takes two parameters: a ``MongoClient`` instance, and
+Once you've created a ``DBContext`` class, construct a
+``DbContextOptionsBuilder`` object and call its ``UseMongoDB()`` method. This
+method takes two parameters: a ``MongoClient`` instance and
 the name of the database that stores the collections you are working with.
 
-Pass the ``UseMongoDB()`` method as show in the following example:
+The ``UseMongoDB()`` method returns a ``DbContextOptions`` object. Pass the
+``Options`` property of this object to the constructor for your ``DBContext``
+class.
+
+The following example shows how to construct a ``DBContext`` object in
+this way:
 
 .. literalinclude:: /includes/fundamentals/code-examples/configure/UseMongoDB.cs
    :language: csharp
@@ -80,20 +87,20 @@ Pass the ``UseMongoDB()`` method as show in the following example:
 
 .. tip:: Creating a MongoClient
 
-   The {+provider-short+} allows you to access methods from
-   the {+csharp-driver-long+} in your application. The previous example uses the
+   You can call methods from the {+csharp-driver-long+} when using the
+   the {+provider-short+}. The previous example uses the
    ``MongoClient()`` method from the {+csharp-driver-short+} to create a MongoDB
    client that connects to a MongoDB instance. 
    
-   To learn more about connecting to
-   MongoDB with the {+csharp-driver-long+} see the 
+   To learn more about using the {+csharp-driver-long+}
+   to connect to MongoDB, see the 
    :driver:`Connection guide </csharp/current/fundamentals/connection/connect/>`
    in the {+csharp-driver-short+} documentation.
 
 Example
 -------
 
-The following code shows a full example of how to configure the
+The following code example shows how to configure the
 {+provider-short+} and insert a document into the database:
 
 .. literalinclude:: /includes/fundamentals/code-examples/configure/ConfigureEFProvider.cs
