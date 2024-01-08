@@ -35,9 +35,7 @@ To learn more about POCOs, see the :driver:`POCO guide
 
 The following code example shows how to create a Customer POCO:
 
-.. literalinclude:: /includes/fundamentals/code-examples/configure/ConfigureEFProvider.cs
-   :start-after: start-customer
-   :end-before: end-customer
+.. literalinclude:: /includes/fundamentals/code-examples/configure/Customer.cs
    :language: csharp
    :copyable:
 
@@ -55,9 +53,7 @@ can interact with while using that context.
 The following example creates a ``DBContext`` class and specifies the
 ``Customer`` object as the ``DBSet`` property:
 
-.. literalinclude:: /includes/fundamentals/code-examples/configure/ConfigureEFProvider.cs
-   :start-after: start-db-context
-   :end-before: end-db-context
+.. literalinclude:: /includes/fundamentals/code-examples/configure/MyDBContext.cs
    :language: csharp
    :copyable:
 
@@ -78,9 +74,7 @@ the name of the database that stores the collections you are working with.
 
 Pass the ``UseMongoDB()`` method as show in the following example:
 
-.. literalinclude:: /includes/fundamentals/code-examples/configure/ConfigureEFProvider.cs
-   :start-after: start-use-mongodb
-   :end-before: end-use-mongodb
+.. literalinclude:: /includes/fundamentals/code-examples/configure/UseMongoDB.cs
    :language: csharp
    :copyable:
 
@@ -99,8 +93,8 @@ Pass the ``UseMongoDB()`` method as show in the following example:
 Example
 -------
 
-The following code shows a full example of how to configure an application to
-use the {+provider-long+}:
+The following code shows a full example of how to configure the
+{+provider-short+} and insert a document into the database:
 
 .. literalinclude:: /includes/fundamentals/code-examples/configure/ConfigureEFProvider.cs
    :language: csharp
