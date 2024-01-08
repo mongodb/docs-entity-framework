@@ -9,7 +9,7 @@ Configure Entity Framework Core for MongoDB
    :values: reference
 
 .. meta::
-   :keywords: EF, EF Core 
+   :keywords: EF, EF Core, code example
 
 .. contents:: On this page
    :local:
