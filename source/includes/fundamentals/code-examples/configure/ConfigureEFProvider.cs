@@ -5,11 +5,9 @@ using Microsoft.Extensions.Configuration;
 using MongoDB.EntityFrameworkCore.Extensions;
 
 var mongoClient = new MongoClient("<Your MongoDB Connection URI>");
-var mongoDatabase = mongoClient.GetDatabase("<Database Name>");
 
 var dbContextOptions =
-    new DbContextOptionsBuilder<MyDbContext>().UseMongoDB(mongoClient,
-        mongoDatabase.DatabaseNamespace.DatabaseName);
+    new DbContextOptionsBuilder<MyDbContext>().UseMongoDB(mongoClient, "<Database Name>");
 
 var db = new MyDbContext(dbContextOptions.Options);
 

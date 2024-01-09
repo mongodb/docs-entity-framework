@@ -44,16 +44,16 @@ The following code example shows how to create a POCO that represents a customer
 Create a DB Context Class
 -------------------------
 
-To begin using {+framework-core+}, create a class that derives from 
+To begin using {+framework-core+}, create a context class that derives from 
 `DBContext <https://learn.microsoft.com/en-us/dotnet/api/system.data.entity.dbcontext>`__.
-The ``DBContext`` class represents a database session and is used to
+The ``DbContext`` derived class instance represents a database session and is used to
 query and save instances of your entities.
 
 The ``DBContext`` class exposes ``DBSet`` properties that specify the entities you
 can interact with while using that context.
 
-The following example creates a ``DBContext`` class and specifies the
-``Customer`` object as a ``DBSet`` property:
+The following example creates an instance of a ``DBContext`` derived class and
+specifies the ``Customer`` object as a ``DBSet`` property:
 
 .. literalinclude:: /includes/fundamentals/code-examples/configure/MyDBContext.cs
    :language: csharp
@@ -62,7 +62,8 @@ The following example creates a ``DBContext`` class and specifies the
 The previous code example overrides the ``OnModelCreating()`` method. Overriding
 the ``OnModelCreating()`` method allows you to specify configuration details for your
 model and its properties. This example uses the ``ToCollection()`` method to
-specify that the ``Customer`` entity should map to the ``customers`` collection.
+specify that the ``Customer`` entities in your application map to the
+``customers`` collection in MongoDB.
 
 .. TODO: Link to a page that goes over methods available to use in OnModelCreating
 
