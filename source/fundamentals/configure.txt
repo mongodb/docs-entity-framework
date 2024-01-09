@@ -87,7 +87,7 @@ this way:
 
 .. tip:: Creating a MongoClient
 
-   You can call methods from the {+csharp-driver-long+} when using the
+   You can call methods from the {+csharp-driver-long+} when using
    the {+provider-short+}. The previous example uses the
    ``MongoClient()`` method from the {+csharp-driver-short+} to create a MongoDB
    client that connects to a MongoDB instance. 
