@@ -1,0 +1,150 @@
+.. _entity-framework-query-data:
+
+==========
+Query Data
+==========
+
+.. facet::
+   :name: genre
+   :values: reference
+
+.. meta::
+   :keywords: EF, EF Core, code example, read
+
+.. contents:: On this page
+   :local:
+   :backlinks: none
+   :depth: 2
+   :class: singlecol
+
+Overview
+--------
+
+In this guide, you can learn how to use the {+provider-long+} to query data from
+a MongoDB database.
+
+{+framework-core+} allows you to work with data in your application without
+explicitly running database commands. Use Language-Integrated Query (LINQ),
+which allows you to write strongly typed queries using .NET/C#, to query data from
+the database. When you run the application, the {+provider-long+} translates
+the LINQ query and runs it on the database using the MongoDB Query API.
+
+This guide shows examples of common query operations using LINQ.
+
+Find Entities
+-------------
+You can find a single entity by using the ``FirstOrDefault()`` method, or find
+multiple entities by using the ``Where()`` method.
+
+Find All Entities
+~~~~~~~~~~~~~~~~~
+
+You can get all entities from your database by using the ``ToList()`` method.
+The ``ToList()`` method will return all entities in the specified collection as
+a ``List``.
+
+The following code uses the ``ToList()`` method to return all entities in a
+collection called ``planets`` and prints their names to the console.
+
+.. code-block:: csharp
+
+   var allPlanets = db.Planets.ToList();
+
+   foreach (var p in allPlanets)
+    {
+        Console.WriteLine(p.name);
+    }
+
+To learn more about the ``ToList()`` method, see the `.NET API documentation
+<https://learn.microsoft.com/en-us/dotnet/api/system.linq.enumerable.tolist>`__.
+
+Find a Single Entity
+~~~~~~~~~~~~~~~~~~~~
+
+To find a single entity, you can use the ``FirstOrDefault()`` method.
+``FirstOrDefault()`` returns the first entity it finds in the database that
+matches the search criteria, and returns ``null`` if no matching entities
+are found.
+
+The following code uses the ``FirstOrDefault()`` method to find a planet with
+the ``name`` field of "Mercury" from a collection called ``planets`` and prints
+the planet name to the console:
+
+.. literalinclude:: /includes/code-examples/quick-reference.cs
+   :start-after: // start-find-one
+   :end-before: // end-find-one
+   :language: csharp
+   :dedent:
+
+To learn more about the ``FirstOrDefault()`` method, see the `.NET API documentation
+<https://learn.microsoft.com/en-us/dotnet/api/system.linq.queryable.firstordefault?view=net-8.0>`__.
+
+Find Multiple Entities
+~~~~~~~~~~~~~~~~~~~~~~
+
+You can use the ``Where()`` method to retrieve multiple entities from your
+collections. The ``Where()`` returns all entities that match the search
+criteria.
+
+The following code uses the ``Where()`` method to find all planets that have the
+``hasRings`` field set to ``true`` and prints the planet names to the console.
+
+.. literalinclude:: /includes/code-examples/quick-reference.cs
+   :start-after: // start-find-many
+   :end-before: // end-find-many
+   :language: csharp
+   :dedent:
+
+To learn more about the ``Where()`` method, see the `.NET API documentation
+<https://learn.microsoft.com/en-us/dotnet/api/microsoft.entityframeworkcore.query.queryablemethods.where>`__.
+
+Sort Entities
+-------------
+
+Use the ``OrderBy()`` method to specify an order in which to return entities
+from a query. ``OrderBy()`` sorts the elements in ascending order based on a
+specified sort criteria.
+
+The following code uses the ``OrderBy()`` method to find all planets and sort
+them by the ``orderFromSun`` field, then prints the results to the console.
+
+.. literalinclude:: /includes/code-examples/quick-reference.cs
+   :start-after: // start-order-by
+   :end-before: // end-order-by
+   :language: csharp
+   :dedent:
+
+To learn more about the ``OrderBy()`` method, see the `.NET API documentation
+<https://learn.microsoft.com/en-us/dotnet/api/system.linq.queryable.orderby>`__.
+
+.. tip:: Sort in Descending Order
+
+   You can sort the results of a query in descending order by using the
+   ``OrderByDescending`` method.
+
+   To learn more about the ``OrderBy()`` method, see the `.NET API documentation
+   <https://learn.microsoft.com/en-us/dotnet/api/system.linq.queryable.orderbydescending>`__.
+
+You can perform a secondary sort on your query by using the ``ThenBy()`` method. The
+``ThenBy()`` method sorts the results of the ``OrderBy()`` method in ascending
+order based on a specified sort criteria. The ``ThenBy()`` method should be
+chained to the ``OrderBy()`` method.
+
+The following code uses the ``OrderBy()`` and ``ThenBy()`` methods to find all
+planets and sort them by the ``hasRings()`` field, with a secondary sort
+on the ``name`` field.
+
+.. literalinclude:: /includes/code-examples/quick-reference.cs
+   :start-after: // start-order-by-then-by
+   :end-before: // end-order-by-then-by
+   :language: csharp
+   :dedent:
+
+.. tip::
+
+   When sorting on a fields with a boolean value, entities with a field value of
+   ``false`` show before those with a value of ``true``.
+
+To learn more about the ``ThenBy()`` method, see the `.NET API documentation
+<https://learn.microsoft.com/en-us/dotnet/api/system.linq.queryable.thenby>`__.
+
