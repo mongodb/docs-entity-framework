@@ -125,9 +125,9 @@ To learn more about the ``OrderBy()`` method, see the `.NET API documentation
 .. tip:: Sort in Descending Order
 
    You can sort the results of a query in descending order by using the
-   ``OrderByDescending`` method.
+   ``OrderByDescending()`` method.
 
-   To learn more about the ``OrderBy()`` method, see the `.NET API documentation
+   To learn more about the ``OrderByDescending()`` method, see the `.NET API documentation
    <https://learn.microsoft.com/en-us/dotnet/api/system.linq.queryable.orderbydescending>`__.
 
 You can perform a secondary sort on your query by using the ``ThenBy()`` method. The
