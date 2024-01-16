@@ -28,7 +28,7 @@ the {+provider-long+} automatically translates the LINQ queries and runs them on
 database using the MongoDB Query API.
 
 In this guide you can see examples of common query operations on
-an application configured to use the {provider-long}.
+an application configured to use the {+provider-long+}.
 
 .. tip::
 
