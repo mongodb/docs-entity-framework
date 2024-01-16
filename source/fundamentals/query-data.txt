@@ -20,43 +20,26 @@ Query Data
 Overview
 --------
 
-In this guide, you can learn how to use the {+provider-long+} to query data from
-a MongoDB database.
-
 {+framework-core+} allows you to work with data in your application without
-explicitly running database commands. Use Language-Integrated Query (LINQ),
-which allows you to write strongly typed queries using .NET/C#, to query data from
-the database. When you run the application, the {+provider-long+} translates
-the LINQ query and runs it on the database using the MongoDB Query API.
+explicitly running database commands. To query your data, use the
+Langage-Integrated Query (LINQ) syntax. LINQ allows you to write strongly typed
+queries using C#-specific keywords and operators. When you run the application,
+the {+provider-long+} automatically translates the LINQ queries and runs them on the
+database using the MongoDB Query API.
 
-This guide shows examples of common query operations using LINQ.
+In this guide you can see examples of common query operations on
+an application configured to use the {provider-long}.
+
+.. tip::
+
+   To learn how to configure an application to use the {+provider-short+}, see
+   :ref:`entity-framework-configure`.
 
 Find Entities
 -------------
+
 You can find a single entity by using the ``FirstOrDefault()`` method, or find
-multiple entities by using the ``Where()`` method.
-
-Find All Entities
-~~~~~~~~~~~~~~~~~
-
-You can get all entities from your database by using the ``ToList()`` method.
-The ``ToList()`` method will return all entities in the specified collection as
-a ``List``.
-
-The following code uses the ``ToList()`` method to return all entities in a
-collection called ``planets`` and prints their names to the console.
-
-.. code-block:: csharp
-
-   var allPlanets = db.Planets.ToList();
-
-   foreach (var p in allPlanets)
-    {
-        Console.WriteLine(p.name);
-    }
-
-To learn more about the ``ToList()`` method, see the `.NET API documentation
-<https://learn.microsoft.com/en-us/dotnet/api/system.linq.enumerable.tolist>`__.
+multiple entities by using the ``Where()`` and ``ToList()`` methods.
 
 Find a Single Entity
 ~~~~~~~~~~~~~~~~~~~~
@@ -67,7 +50,7 @@ matches the search criteria, and returns ``null`` if no matching entities
 are found.
 
 The following code uses the ``FirstOrDefault()`` method to find a planet with
-the ``name`` field of "Mercury" from a collection called ``planets`` and prints
+the ``name`` field of "Mercury" from a ``DBSet`` called ``Planets`` and prints
 the planet name to the console:
 
 .. literalinclude:: /includes/code-examples/quick-reference.cs
@@ -97,6 +80,28 @@ The following code uses the ``Where()`` method to find all planets that have the
 
 To learn more about the ``Where()`` method, see the `.NET API documentation
 <https://learn.microsoft.com/en-us/dotnet/api/microsoft.entityframeworkcore.query.queryablemethods.where>`__.
+
+Find All Entities
+~~~~~~~~~~~~~~~~~
+
+You can get all entities from your database by using the ``ToList()`` method.
+The ``ToList()`` method will return all entities in the specified collection as
+a ``List``.
+
+The following code uses the ``ToList()`` method to return all entities in a
+``DBSet`` called ``Planets`` and prints their names to the console.
+
+.. code-block:: csharp
+
+   var allPlanets = db.Planets.ToList();
+
+   foreach (var p in allPlanets)
+    {
+        Console.WriteLine(p.name);
+    }
+
+To learn more about the ``ToList()`` method, see the `.NET API documentation
+<https://learn.microsoft.com/en-us/dotnet/api/system.linq.enumerable.tolist>`__.
 
 Sort Entities
 -------------
@@ -142,9 +147,8 @@ on the ``name`` field.
 
 .. tip::
 
-   When sorting on a fields with a boolean value, entities with a field value of
+   When sorting on fields with a boolean value, entities with a field value of
    ``false`` show before those with a value of ``true``.
 
 To learn more about the ``ThenBy()`` method, see the `.NET API documentation
 <https://learn.microsoft.com/en-us/dotnet/api/system.linq.queryable.thenby>`__.
-
