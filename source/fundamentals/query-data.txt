@@ -44,7 +44,7 @@ multiple entities by using the ``Where()`` and ``ToList()`` methods.
 Find a Single Entity
 ~~~~~~~~~~~~~~~~~~~~
 
-The ``FirstOrDefault()``method returns the first entity it finds in your collection that
+The ``FirstOrDefault()`` method returns the first entity it finds in your collection that
 matches the search criteria, and returns ``null`` if no matching entities
 are found.
 
