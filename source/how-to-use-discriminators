@@ -1,0 +1,109 @@
+.. _entity-framework-how-to-use-discriminators:
+
+
+
+=========================
+How To Use Discriminators
+=========================
+This page shows the provider syntax for using discriminators.
+
+
+
+What is a Discriminator
+-----------------------
+Discriminators are used when you're trying to have multiple class objects stored in the same collection.
+**Discriminator** is a property in your class that is used to difference between multiple documents when retrieving the data from the database so that the serializer can understand which documents belongs to which class.
+
+some class examples:
+--------------------
+.. io-code-block::
+          :copyable: true
+
+          .. input::
+             :language: csharp
+
+             public class Shape{}
+             public class Rectangle : Shape{}
+             public class Triangle : Shape{}
+             public class Circle : Shape{}
+
+
+in this example, you want to store instances of the **Rectangle**, **Triangle** and **Circle** classes in different documents in the **Shapes** collection 
+
+
+
+
+Setting Up The DatabaseContext
+------------------------------
+Go to DatabaseContext class and add the Different DBSets for your classes
+.. io-code-block::
+          :copyable: true
+
+          .. input::
+             :language: csharp
+                public DbSet<Shape> Shapes { get; set; }
+                public DbSet<Rectangle> Rectangles { get; set; }
+                public DbSet<Triangle> Triangles { get; set; }
+                public DbSet<Circle> Circles { get; set; }
+
+
+
+in the OnModelCreating Method:
+
+.. io-code-block::
+          :copyable: true
+
+          .. input::
+             :language: csharp
+                protected override void OnModelCreating(ModelBuilder modelBuilder)
+                {
+                    base.OnModelCreating(modelBuilder);
+
+
+                    modelBuilder.Entity<Shape>().ToCollection("Shapes");
+                    
+                    modelBuilder.Entity<Rectangle>().ToCollection("Shapes").HasDiscriminator<string>("Discriminator");    
+                    modelBuilder.Entity<Triangle>().ToCollection("Shapes").HasDiscriminator<string>("Discriminator");
+                    modelBuilder.Entity<Circle>().ToCollection("Shapes").HasDiscriminator<string>("Discriminator");
+                    
+                }
+
+using the **ToCollection** method, you configure for the *Entity*s to get stored in the **Shapes** Collection.
+after that you should add the discriminator with **HasDiscriminator** method
+in the <>, discriminators' type is being set as *string* and the input of the **HasDiscriminator** method("Discriminator") is the name of your *Discriminator Property*
+
+Note that you should add the discriminator property to your parent class:
+-------------------------------------------------------------------------
+.. io-code-block::
+          :copyable: true
+
+          .. input::
+             :language: csharp
+                public class Shape
+                {
+                    public string Discriminator {get; set;}
+                }
+
+> Note:
+the name of your *Discriminator Property* should be the same name you passed to **HasDiscriminator** Method as an input.
+
+
+Querying From The Database
+-------------------------------------
+
+
+.. io-code-block::
+          :copyable: true
+
+          .. input::
+             :language: csharp
+                // Getting All of the Rectangles:
+                DatabaseContext.Circles.Where(a => a.Discriminator == nameof(Circle)).ToList();
+                
+                //Adding a Rectangle:
+                var entity = new Rectangle();
+                DatabaseContext.Rectangles.Add(entity);
+                
+                // and so on so forth......
+
+Note that although you're getting\adding the entities from your 'Rectangles' or 'Circles' DBSet, the data is being stored in a single **Shapes** Collection.
