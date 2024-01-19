@@ -1,0 +1,145 @@
+.. _entity-framework-write-data:
+
+=====================
+Write Data to MongoDB
+=====================
+
+.. facet::
+   :name: genre
+   :values: reference
+
+.. meta::
+   :keywords: EF, EF Core, code example, write
+
+.. contents:: On this page
+   :local:
+   :backlinks: none
+   :depth: 2
+   :class: singlecol
+
+Overview
+--------
+
+{+framework-core+} allows you to work with data in your application without
+explicitly running database commands. You can perform write operations such as
+inserting, updating, or deleting data in your application, and persist those
+changes to MongoDB using the ``SaveChanges()`` method.
+
+When ``SaveChanges()`` is called, the {+provider-short+} automatically detects
+any changes made to your data and runs the necessary commands to update the
+database using the MongoDB Query API.
+
+In this guide you can see examples of common write operations on
+an application configured to use the {+provider-long+}.
+
+.. tip::
+
+   To learn how to configure an application to use the {+provider-short+}, see
+   :ref:`entity-framework-configure`.
+
+Insert
+------
+
+You can insert a single entity into your collection by using the ``Add()``
+method, or insert multiple entities at once by using the ``AddRange()`` method. 
+
+Insert One Entity
+~~~~~~~~~~~~~~~~~
+
+The ``Add()`` method accepts a single entity of the same type as that of the ``DbSet``
+on which it's being called.
+
+The following code uses the ``Add()`` method to add a new ``Planet`` object to
+the ``DbSet`` called ``Planets``. It then calls the ``SaveChanges()`` method to
+insert that entity into the MongoDB collection.
+
+.. literalinclude:: /includes/code-examples/quick-reference.cs
+    :start-after: // start-insert-one
+    :end-before: // end-insert-one
+    :language: csharp
+    :dedent:
+
+Insert Multiple Entities
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+The ``AddRange()`` method accepts an array of entities to add to the ``DbSet``. 
+
+The following code uses the ``AddRange()`` method to add an array of ``Planet``
+objects to the ``DbSet`` called ``Planets``. It then calls the ``SaveChanges()``
+method to insert those entities into the MongoDB collection.
+
+.. literalinclude:: /includes/code-examples/quick-reference.cs
+    :start-after: // start-insert-many
+    :end-before: // end-insert-many
+    :language: csharp
+    :dedent:
+
+Update
+------
+
+To update an entity, first retrieve the entity that you want to update. Then
+make the changes to that entity in your application by using the conventions of
+your programming language. To complete the update, call the
+``SaveChanges()`` method. The {+provider-short+} compares the updated entity with a
+snapshot of the entity before the change and automatically updates the collection
+using the MongoDB Query API.
+
+The following code updates the ``name`` field of a ``Planet``, then calls the
+``SaveChanges()`` method to persist that change to the collection.
+
+.. literalinclude:: /includes/code-examples/quick-reference.cs
+    :start-after: // start-update-one
+    :end-before: // end-update-one
+    :language: csharp
+    :dedent:
+
+Delete
+------
+
+You can delete a single entity from your collection by using the ``Remove()``
+method, or delete multiple entities at once by using the ``RemoveRange()`` method.
+
+Delete One Entity
+~~~~~~~~~~~~~~~~~
+
+The ``Remove()`` method accepts a single entity of the same type as that of the ``DbSet``
+on which it's being called.
+
+The following code removes a ``Planet`` entity with the ``name`` field of
+"Pluto". It then calls the ``SaveChanges()`` method to delete that entity from
+the MongoDB collection.
+
+.. literalinclude:: /includes/code-examples/quick-reference.cs
+    :start-after: // start-delete-one
+    :end-before: // end-delete-one
+    :language: csharp
+    :dedent:
+
+Delete Multiple Entities
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+The ``RemoveRange()`` method accepts an array of entities to remove from the
+``DbSet``. 
+
+The following code finds two ``Planet`` entities and adds them to an array. It
+then calls the ``RemoveRange()`` method to remove both entities from the
+``DbSet``. Finally, it calls the ``SaveChanges()`` method to remove those
+entities from the MongoDB collection.
+
+.. literalinclude:: /includes/code-examples/quick-reference.cs
+    :start-after: // start-delete-many
+    :end-before: // end-delete-many
+    :language: csharp
+    :dedent:
+
+Additional Information
+----------------------
+
+To learn more about the methods discussed in this guide, see the following .NET API
+documentation links:
+
+- `SaveChanges() <https://learn.microsoft.com/en-us/dotnet/api/microsoft.entityframeworkcore.dbcontext.saveChanges>`__
+- `Add() <https://learn.microsoft.com/en-us/dotnet/api/microsoft.entityframeworkcore.dbcontext.add>`__
+- `AddRange() <https://learn.microsoft.com/en-us/dotnet/api/microsoft.entityframeworkcore.dbcontext.addRange>`__
+- `Remove() <https://learn.microsoft.com/en-us/dotnet/api/microsoft.entityframeworkcore.dbcontext.remove>`__
+- `RemoveRange() <https://learn.microsoft.com/en-us/dotnet/api/microsoft.entityframeworkcore.dbcontext.removeRange>`__
