@@ -21,15 +21,15 @@ Overview
 --------
 
 {+framework-core+} allows you to work with data in your application without
-explicitly running database commands. You can perform write operations such as
-inserting, updating, or deleting data in your application, and persist those
-changes to MongoDB using the ``SaveChanges()`` method.
+explicitly running database commands. You can perform write operations to
+insert, update, or delete data within your application, and then persist those
+changes to MongoDB by using the ``SaveChanges()`` method.
 
-When ``SaveChanges()`` is called, the {+provider-short+} automatically detects
+When you call the ``SaveChanges()`` method, the {+provider-short+} automatically detects
 any changes made to your data and runs the necessary commands to update the
-database using the MongoDB Query API.
+database by using the MongoDB Query API.
 
-In this guide you can see examples of common write operations on
+In this guide, you can see examples of how to perform common write operations on
 an application configured to use the {+provider-long+}.
 
 .. tip::
@@ -40,14 +40,14 @@ an application configured to use the {+provider-long+}.
 Insert
 ------
 
-You can insert a single entity into your collection by using the ``Add()``
-method, or insert multiple entities at once by using the ``AddRange()`` method. 
+You can use the ``Add()`` method to insert a single entity into your collection, 
+or you can use the ``AddRange()`` method to insert multiple entities at once. 
 
 Insert One Entity
 ~~~~~~~~~~~~~~~~~
 
-The ``Add()`` method accepts a single entity of the same type as that of the ``DbSet``
-on which it's being called.
+The ``Add()`` method accepts a single entity of the same type that you
+specified on the ``DbSet`` instance that you are modifying.
 
 The following code uses the ``Add()`` method to add a new ``Planet`` object to
 the ``DbSet`` called ``Planets``. It then calls the ``SaveChanges()`` method to
@@ -62,7 +62,7 @@ insert that entity into the MongoDB collection.
 Insert Multiple Entities
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
-The ``AddRange()`` method accepts an array of entities to add to the ``DbSet``. 
+The ``AddRange()`` method accepts an array of entities that you want to add to the ``DbSet``. 
 
 The following code uses the ``AddRange()`` method to add an array of ``Planet``
 objects to the ``DbSet`` called ``Planets``. It then calls the ``SaveChanges()``
@@ -79,13 +79,14 @@ Update
 
 To update an entity, first retrieve the entity that you want to update. Then
 make the changes to that entity in your application by using the conventions of
-your programming language. To complete the update, call the
+your programming language. To save the update to MongoDB, call the
 ``SaveChanges()`` method. The {+provider-short+} compares the updated entity with a
 snapshot of the entity before the change and automatically updates the collection
-using the MongoDB Query API.
+by using the MongoDB Query API.
 
-The following code updates the ``name`` field of a ``Planet``, then calls the
-``SaveChanges()`` method to persist that change to the collection.
+The following code retrieves an entity in which the ``name`` value is
+``"Mercury"``, then updates the ``name`` field and calls the ``SaveChanges()``
+method to persist that change to the collection.
 
 .. literalinclude:: /includes/code-examples/quick-reference.cs
     :start-after: // start-update-one
@@ -96,17 +97,18 @@ The following code updates the ``name`` field of a ``Planet``, then calls the
 Delete
 ------
 
-You can delete a single entity from your collection by using the ``Remove()``
-method, or delete multiple entities at once by using the ``RemoveRange()`` method.
+You can use the ``Remove()`` method to delete a single entity from your
+collection, or use the ``RemoveRange()`` method to delete multiple entities at
+once.
 
 Delete One Entity
 ~~~~~~~~~~~~~~~~~
 
-The ``Remove()`` method accepts a single entity of the same type as that of the ``DbSet``
-on which it's being called.
+The ``Remove()`` method accepts a single entity of the same type that you
+specified on the ``DbSet`` instance that you are modifying.
 
-The following code removes a ``Planet`` entity with the ``name`` field of
-"Pluto". It then calls the ``SaveChanges()`` method to delete that entity from
+The following code removes a ``Planet`` entity in which the ``name`` value is
+``"Pluto"``. It then calls the ``SaveChanges()`` method to delete that entity from
 the MongoDB collection.
 
 .. literalinclude:: /includes/code-examples/quick-reference.cs
@@ -122,8 +124,8 @@ The ``RemoveRange()`` method accepts an array of entities to remove from the
 ``DbSet``. 
 
 The following code finds two ``Planet`` entities and adds them to an array. It
-then calls the ``RemoveRange()`` method to remove both entities from the
-``DbSet``. Finally, it calls the ``SaveChanges()`` method to remove those
+then uses the ``RemoveRange()`` method to remove both entities from the
+``DbSet``. Finally, it uses the ``SaveChanges()`` method to remove those
 entities from the MongoDB collection.
 
 .. literalinclude:: /includes/code-examples/quick-reference.cs
