@@ -54,10 +54,10 @@ the ``DbSet`` called ``Planets``. It then calls the ``SaveChanges()`` method to
 insert that entity into the MongoDB collection.
 
 .. literalinclude:: /includes/code-examples/quick-reference.cs
-    :start-after: // start-insert-one
-    :end-before: // end-insert-one
-    :language: csharp
-    :dedent:
+   :start-after: // start-insert-one
+   :end-before: // end-insert-one
+   :language: csharp
+   :dedent:
 
 Insert Multiple Entities
 ~~~~~~~~~~~~~~~~~~~~~~~~
@@ -69,10 +69,10 @@ objects to the ``DbSet`` called ``Planets``. It then calls the ``SaveChanges()``
 method to insert those entities into the MongoDB collection.
 
 .. literalinclude:: /includes/code-examples/quick-reference.cs
-    :start-after: // start-insert-many
-    :end-before: // end-insert-many
-    :language: csharp
-    :dedent:
+   :start-after: // start-insert-many
+   :end-before: // end-insert-many
+   :language: csharp
+   :dedent:
 
 Update
 ------
@@ -89,10 +89,10 @@ The following code retrieves an entity in which the ``name`` value is
 method to persist that change to the collection.
 
 .. literalinclude:: /includes/code-examples/quick-reference.cs
-    :start-after: // start-update-one
-    :end-before: // end-update-one
-    :language: csharp
-    :dedent:
+   :start-after: // start-update-one
+   :end-before: // end-update-one
+   :language: csharp
+   :dedent:
 
 Delete
 ------
@@ -112,10 +112,10 @@ The following code removes a ``Planet`` entity in which the ``name`` value is
 the MongoDB collection.
 
 .. literalinclude:: /includes/code-examples/quick-reference.cs
-    :start-after: // start-delete-one
-    :end-before: // end-delete-one
-    :language: csharp
-    :dedent:
+   :start-after: // start-delete-one
+   :end-before: // end-delete-one
+   :language: csharp
+   :dedent:
 
 Delete Multiple Entities
 ~~~~~~~~~~~~~~~~~~~~~~~~
@@ -129,10 +129,10 @@ then uses the ``RemoveRange()`` method to remove both entities from the
 entities from the MongoDB collection.
 
 .. literalinclude:: /includes/code-examples/quick-reference.cs
-    :start-after: // start-delete-many
-    :end-before: // end-delete-many
-    :language: csharp
-    :dedent:
+   :start-after: // start-delete-many
+   :end-before: // end-delete-many
+   :language: csharp
+   :dedent:
 
 Additional Information
 ----------------------
