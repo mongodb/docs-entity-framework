@@ -78,14 +78,13 @@ Update
 ------
 
 To update an entity, first retrieve the entity that you want to update. Then
-make the changes to that entity in your application by using the conventions of
-your programming language. To save the update to MongoDB, call the
+make the changes to that entity. To save the update to MongoDB, call the
 ``SaveChanges()`` method. The {+provider-short+} compares the updated entity with a
 snapshot of the entity before the change and automatically updates the collection
 by using the MongoDB Query API.
 
 The following code retrieves an entity in which the ``name`` value is
-``"Mercury"``, then updates the ``name`` field and calls the ``SaveChanges()``
+``"Mercury"``, then updates the ``name`` field. The code then calls the ``SaveChanges()``
 method to persist that change to the collection.
 
 .. literalinclude:: /includes/code-examples/quick-reference.cs
@@ -98,7 +97,7 @@ Delete
 ------
 
 You can use the ``Remove()`` method to delete a single entity from your
-collection, or use the ``RemoveRange()`` method to delete multiple entities at
+collection, or the ``RemoveRange()`` method to delete multiple entities at
 once.
 
 Delete One Entity
@@ -137,7 +136,7 @@ entities from the MongoDB collection.
 Additional Information
 ----------------------
 
-To learn more about the methods discussed in this guide, see the following .NET API
+To learn more about the methods discussed in this guide, see the following {+language-dotnet+} API
 documentation links:
 
 - `SaveChanges() <https://learn.microsoft.com/en-us/dotnet/api/microsoft.entityframeworkcore.dbcontext.saveChanges>`__
