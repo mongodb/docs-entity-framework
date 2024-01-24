@@ -21,9 +21,9 @@ Overview
 --------
 
 {+framework-core+} allows you to work with data in your application without
-explicitly running database commands. You can perform write operations to
-insert, update, or delete data within your application, and then persist those
-changes to MongoDB by using the ``SaveChanges()`` method.
+explicitly running database commands. You can insert, update, or delete data
+within your application and persist those changes to MongoDB by using the
+``SaveChanges()`` method.
 
 When you call the ``SaveChanges()`` method, the {+provider-short+} automatically detects
 any changes made to your data and runs the necessary commands to update the
