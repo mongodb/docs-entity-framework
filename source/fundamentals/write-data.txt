@@ -78,8 +78,9 @@ Update
 ------
 
 To update an entity, first retrieve the entity that you want to update. Then
-make the changes to that entity. To save the update to MongoDB, call the
-``SaveChanges()`` method. The {+provider-short+} compares the updated entity with a
+make the changes to that entity. The provider tracks any changes made to the entity, such as setting
+properties or adding and removing items from fields with list values. To save the update to
+MongoDB, call the ``SaveChanges()`` method. The {+provider-short+} compares the updated entity with a
 snapshot of the entity before the change and automatically updates the collection
 by using the MongoDB Query API.
 
