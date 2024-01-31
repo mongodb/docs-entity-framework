@@ -27,7 +27,7 @@ their related API documentation.
 
    * - | **Create an Instance of the DBContext**
        |
-       | :ref:`Fundamentals <entity-framework-configure>`
+       | :ref:`Fundamentals <entity-framework-db-context>`
 
      - .. literalinclude:: /includes/code-examples/quick-reference.cs
           :start-after: // start-create-instance
