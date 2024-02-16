@@ -15,7 +15,7 @@ Limitations
    :values: reference
 
 .. meta:: 
-   :keywords: .NET, support
+   :keywords: EF, EF Core, support
 
 Overview
 --------
@@ -25,10 +25,10 @@ are not supported by the {+provider-long+}. Because the provider is in active
 development, some features listed on this page might be considered for future
 releases based on customer demand.
 
-MongoDB Features
-----------------
+Unsupported MongoDB Features
+----------------------------
 
-The following sections discuss MongoDB features that are not supported by the {+provider-short+}.
+The following sections describe MongoDB features that are not supported by the {+provider-short+}.
 
 Time Series
 ~~~~~~~~~~~
@@ -48,10 +48,10 @@ Vector Search
 The {+provider-short+} does not support MongoDB Atlas Vector search. Atlas Vector Search is a
 MongoDB-exclusive feature with no similar feature available in {+framework-core+}.
 
-{+framework-core+} Features
-------------------------------
+Unsupported {+framework-core+} Features
+---------------------------------------
 
-The following sections discuss {+framework-core+} features that are not
+The following sections describe {+framework-core+} features that are not
 supported by the {+provider-short+}.
 
 Migrations
@@ -59,13 +59,13 @@ Migrations
 
 Migrations in {+framework-core+} are designed for relational databases. Because
 MongoDB is a document database, migrations are not supported by the
-{+provider-long+} at this time.
+{+provider-long+}.
 
 Database-First Development
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 MongoDB is designed to be flexible and does not require a database schema.
-Because of this schemaless design, database-first development is not supported
+Because of MongoDB's schemaless design, database-first development is not supported
 in the {+provider-short+}. 
 
 Foreign Keys
@@ -82,7 +82,7 @@ Table Splitting
 ~~~~~~~~~~~~~~~
 
 MongoDB is a document database and does not have normalized tables.
-Because of this, table splitting has limited use and is not supported by the
+Because of this, table splitting is not supported by the
 {+provider-short+}.
 
 Temporal Tables
