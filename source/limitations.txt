@@ -34,7 +34,7 @@ Time Series
 ~~~~~~~~~~~
 
 The {+provider-short+} does not support time series data or time series
-collections. This is a MongoDB-exclusive feature that isn't available with {+framework-core+}.
+collections. These are MongoDB-exclusive features that are not available in {+framework-core+}.
 
 Atlas Search
 ~~~~~~~~~~~~
@@ -59,7 +59,7 @@ Migrations
 
 Migrations in {+framework-core+} are designed for relational databases. Because
 MongoDB is a document database, migrations are not supported by the
-{+provider-short+} at this time.
+{+provider-long+} at this time.
 
 Database-First Development
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -71,7 +71,7 @@ in the {+provider-short+}.
 Foreign Keys
 ~~~~~~~~~~~~
 
-Because MongoDB is a document database, {+provider-short+} does not support foreign keys.
+Because MongoDB is a document database, the {+provider-short+} does not support foreign keys.
 
 Alternate Keys
 ~~~~~~~~~~~~~~
@@ -81,7 +81,7 @@ Because MongoDB is a document database, the {+provider-short+} does not support 
 Table Splitting
 ~~~~~~~~~~~~~~~
 
-MongoDB is a document database and does not have traditional normalized tables.
+MongoDB is a document database and does not have normalized tables.
 Because of this, table splitting has limited use and is not supported by the
 {+provider-short+}.
 
