@@ -59,7 +59,7 @@ supports only the following scalar aggregation operations:
 
 - ``Count()``
 - ``LongCount()``
-- ``Any()`` with or without predicates. 
+- ``Any()``, with or without predicates
 
 This version of the {+provider-short+} does not support other scalar aggregation
 operations.
@@ -67,7 +67,7 @@ operations.
 Transactions
 ~~~~~~~~~~~~
 
-Transactions ensure that all updates it a set of changes either succeed, or fail
+Transactions ensure that all updates in a set of changes either succeed, or fail
 together so the database is not left in an inconsistent state. 
 
 This version of the {+provider-short+} does not support the {+framework-core+}
