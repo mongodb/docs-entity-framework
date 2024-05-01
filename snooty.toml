@@ -36,3 +36,10 @@ string-data-type = "``string``"
 int-data-type = "``integer``"
 not-available = "N/A"
 package = "MongoDB.EntityFrameworkCore"
+
+[[banners]]
+targets = ["/*"]
+variant = "tip"
+value = """
+    The {+provider-long+} is now available (GA).
+    """
