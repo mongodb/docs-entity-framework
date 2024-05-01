@@ -41,5 +41,6 @@ package = "MongoDB.EntityFrameworkCore"
 targets = ["/*"]
 variant = "tip"
 value = """
-    The {+provider-long+} is now available (GA).
+    The {+provider-long+} is now generally available (GA). \
+    To learn more, read `our blog post <https://www.mongodb.com/blog/post/mongodb-provider-entity-framework-core-now-generally-available>`__.
     """
