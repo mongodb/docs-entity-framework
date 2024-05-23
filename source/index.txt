@@ -9,6 +9,7 @@
    /fundamentals
    /limitations
    /issues-and-help
+   /faq
 
 Introduction
 ------------
