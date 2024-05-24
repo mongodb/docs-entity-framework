@@ -40,12 +40,12 @@ following:
 - Aggregation operations
 - Custom mapping
 
-The {+provider-long+} allows you to use Microsoft's Entity Framework Core with
-MongoDB in your {+dotnet-csharp+} application. The {+provider-short+} supports
+The {+provider-long+} allows you to use Microsoft's {+framework-core+} with
+MongoDB in your {+dotnet-csharp+} applications. The {+provider-short+} supports
 change tracking, entity-based LINQ operations, and modeling familiar to
 {+framework-core+} users. The provider includes features such as the following:
 
 - Intelligent object tracking
 - Entity-based LINQ operations
-- Entity Framework modelling and mapping with the fluent API
+- Entity Framework modeling and mapping with the fluent API
 - Indirect database operations
