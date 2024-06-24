@@ -28,7 +28,7 @@ This page contains frequently asked questions and their corresponding answers.
 What is the Difference Between the {+csharp-driver-short+} and the {+provider-short+}?
 -----------------------------------------------------------------------------------------
 
-The {+csharp-driver-long+} is a library that exposes MongoDB functionality
+The :drivers:`{+csharp-driver-long+} </csharp>` is a library that exposes MongoDB functionality
 directly, and includes a capable LINQ provider with projections, group
 operations, and flexible mapping. The driver includes features such as the
 following:
