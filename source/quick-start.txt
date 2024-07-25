@@ -4,6 +4,13 @@
 Quick Start
 ===========
 
+.. facet::
+   :name: genre
+   :values: tutorial
+
+.. meta::
+   :keywords: set up, runnable app, initialize, connect, code example
+
 .. contents:: On this page
    :local:
    :backlinks: none
