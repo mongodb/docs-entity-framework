@@ -23,8 +23,8 @@ Learn what's new in:
 
 .. important::
 
-   The {+driver-long+} does not limit breaking changes to major version releases
-   to ensure that the major version number aligns with {+ef-core+} versions.
+   The {+provider-long+} does not limit breaking changes to major version releases
+   to ensure that the major version number aligns with {+framework-core+} versions.
    Instead, breaking and significant changes are made in minor version releases.
  
 .. _entity-framework-version-8.1:
@@ -37,10 +37,10 @@ What's New in 8.1
    The v8.1 provider introduces the following breaking changes:
 
    - The {+provider-short+} runs all changes as MongoDB transactions. If your
-     application uses {+mdb-server+} v5.0 or earlier, or does not run in a
+     application uses {+mdb-server+} earlier than v5.0, or does not run in a
      replica set, you must reconfigure your application.
    - Changed the default GUID storage format from ``CSharpLegacy`` binary
-     format, to ``Standard`` format.
+     format to ``Standard`` format.
    - Modified the ``IMongoClientWrapper`` interface to provide service
      registration for the ``MongoClientWrapper`` class. You should not implement the
      ``IMongoClientWrapper`` interface in your application.
@@ -48,7 +48,7 @@ What's New in 8.1
      property name instead of their class name.
 
    For more information about these breaking changes, see
-   :ref:`entity-framework-breaking-changes-8.1` in the Upgrade guide.
+   :ref:`entity-framework-breaking-changes-v8.1` in the Upgrade Provider Version guide.
 
 The 8.1 provider release includes the following new features:
 

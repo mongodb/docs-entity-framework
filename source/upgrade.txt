@@ -25,7 +25,7 @@ application when you upgrade your provider to a new version.
 
 Before you upgrade, perform the following actions:
 
-- Ensure the new version is compatible with the {+mdb-server+} versions
+- Ensure the new version is compatible with the {+mdb-server+} version
   your application connects to and the {+language-dotnet+} version your
   application runs on. See the :ref:`Compatibility <entity-framework-compatibility>`
   section for this information.
@@ -54,15 +54,15 @@ Version 8.1.0 Breaking Changes
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 - Updated the {+provider-short+} to run all changes as MongoDB transactions. If your
-  application uses {+mdb-server+} v5.0 or earlier, or does not run in a
+  application uses {+mdb-server+} earlier than v5.0, or does not run in a
   replica set, you must make the following changes to your application:
 
-  - If your application is configured for {+mdb-server+} v5.0 or earlier, you
-    must upgrade to {+mdb-server+} v5.1 or later.
+  - If your application is configured for {+mdb-server+} earlier than v5.0, you
+    must upgrade to {+mdb-server+} v5.0 or later.
   - If your application runs on a standalone server, you must reconfigure your
     standalone server to a single-instance replica set. To learn more about how
     to reconfigure your standalone server, see
-    :manual:`</tutorial/convert-standalone-to-replica-set>` in the
+    :manual:`Convert a Standalone Self-Managed mongod to a Replica Set </tutorial/convert-standalone-to-replica-set>` in the
     {+mdb-server+} manual.
   - If your application runs in a container environment, switch to a
     single-instance replica set container if one is available.
