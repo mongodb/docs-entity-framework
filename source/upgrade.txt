@@ -17,7 +17,6 @@ Upgrade Provider Version
 .. meta::
    :keywords: breaking change, update, version
 
-
 Overview
 --------
 
