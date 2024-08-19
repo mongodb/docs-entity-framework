@@ -10,4 +10,4 @@
    * - **{+version-number+}**
      - **8.0**
      - **8.0 or later**
-     - **3.6 or later**
+     - **5.0 or later**

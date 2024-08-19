@@ -49,6 +49,8 @@ API Documentation
 For detailed information about types and methods in the {+provider-short+}, see
 the `{+provider-short+} API documentation <{+api-root+}>`__.
 
+.. _entity-framework-compatibility:
+
 Compatibility
 -------------
 
