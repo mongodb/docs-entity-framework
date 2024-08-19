@@ -23,9 +23,10 @@ Learn what's new in:
 
 .. important::
 
-   The {+provider-long+} does not limit breaking changes to major version releases
-   to ensure that the major version number aligns with {+framework-core+} versions.
-   Instead, breaking and significant changes are made in minor version releases.
+   To ensure that the provider major version number aligns with
+   {+framework-core+} versions, the {+provider-long+} does not limit breaking
+   changes to major version releases. Instead, breaking and significant changes
+   are made in minor version releases.
  
 .. _entity-framework-version-8.1:
 
@@ -37,7 +38,7 @@ What's New in 8.1
    The v8.1 provider introduces the following breaking changes:
 
    - The {+provider-short+} runs all changes as MongoDB transactions. If your
-     application uses {+mdb-server+} earlier than v5.0, or does not run in a
+     application uses a {+mdb-server+} version earlier than v5.0, or does not run in a
      replica set, you must reconfigure your application.
    - Changed the default GUID storage format from ``CSharpLegacy`` binary
      format to ``Standard`` format.

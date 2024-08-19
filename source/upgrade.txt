@@ -39,14 +39,14 @@ Breaking Changes
 ----------------
 
 A breaking change is a modification of a convention or a behavior starting in
-a specific version of the provider. This type of change may prevent your application from
+a specific version of the provider. This type of change might prevent your application from
 working properly if not addressed before upgrading the provider.
 
 The breaking changes in this section are categorized by the provider version that
 introduced them. When upgrading provider versions, address all the breaking
 changes between the current and upgrade versions. For example, if you
 are upgrading the provider from v8.0 to v8.5, address all breaking changes from
-the version after v8.0 including any listed under v8.5.
+the version after v8.0, including any listed under v8.5.
 
 .. _entity-framework-breaking-changes-v8.1:
 
@@ -57,7 +57,7 @@ Version 8.1.0 Breaking Changes
   application uses {+mdb-server+} earlier than v5.0, or does not run in a
   replica set, you must make the following changes to your application:
 
-  - If your application is configured for {+mdb-server+} earlier than v5.0, you
+  - If your application is configured for a {+mdb-server+} version earlier than v5.0, you
     must upgrade to {+mdb-server+} v5.0 or later.
   - If your application runs on a standalone server, you must reconfigure your
     standalone server to a single-instance replica set. To learn more about how
@@ -68,23 +68,25 @@ Version 8.1.0 Breaking Changes
     single-instance replica set container if one is available.
 
   To avoid snapshot issues during transactions, call the ``EnsureCreated()`` or
-  ``EnsureCreatedAsync()`` during your application start-up, rather than
+  ``EnsureCreatedAsync()`` method during your application start-up, rather than
   creating the collection or database
   implicitly.
 
-  If you don't want to ensure optimistic concurrency with transactions, you can
+  If you don't want to ensure :wikipedia:`optimistic concurrency
+  <Optimistic_concurrency_control>` with transactions, you can
   disable automatic transactions by setting ``Database.AutoTransactionBehavior =
   AutoTrasactionBehavior.Never`` on your ``DbContext`` subclass during your
   application setup.
 
-- Changed the default GUID storage format from ``CSharpLegacy`` binary format,
+- Changed the default GUID storage format from ``CSharpLegacy`` binary format
   to ``Standard`` format. If your database contains existing GUIDs that are not
   in ``Standard`` format, we recommend converting them to ``Standard`` format.
 
-- The ``CamelCaseElementNameConvention`` cases owned entities based on their
-  property name instead of their class name. If your application uses the
-  ``CamelCaseElementNameConvention``, the casing of your data might change.
+- The ``CamelCaseElementNameConvention`` converts the casing of owned entities
+  based on their property name instead of their class name. If your application
+  uses the ``CamelCaseElementNameConvention``, the casing of your data might change.
 
 For more information about the breaking changes in this version, see the
 :github:`Breaking Changes
-<mongodb/mongo-efcore-provider/blob/main/BREAKING-CHANGES.md>` release notes.
+<mongodb/mongo-efcore-provider/blob/main/BREAKING-CHANGES.md>` section
+of the provider repository on GitHub.
