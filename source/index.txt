@@ -10,6 +10,8 @@
    /limitations
    /issues-and-help
    /faq
+   /whats-new
+   /upgrade
    API Documentation <{+api-root+}>
 
 Introduction
@@ -42,6 +44,17 @@ Quick Reference
 
 See driver syntax examples for common MongoDB commands in the
 :ref:`Quick Reference <entity-framework-quick-reference>` section.
+
+What's New
+----------
+
+For a list of new features and changes in each version, see the :ref:`<entity-framework-whats-new>` section.
+
+Upgrade Provider Version
+------------------------
+
+Learn what changes you might need to make to your application to upgrade the
+provider version in the :ref:`entity-framework-upgrade-provider` section.
 
 API Documentation
 -----------------
