@@ -53,8 +53,9 @@ What's New in 8.1
 
 The 8.1 provider release includes the following new features:
 
-- Support for optimistic concurrency through the
-  ``IsConcurrencyToken()`` method or the ``ConcurrencyCheck()`` attribute
+- Support for optimistic concurrency through the following:
+  - ``IsConcurrencyToken()`` method or the ``ConcurrencyCheck()`` attribute
+  - ``IsRowVersion()`` method or the ``Timestamp`` attribute
 - Support for mapping ``Dictionary`` and ``ReadOnlyDictionary`` properties
 
 For more information about this release, see the :github:`v8.1.0 release notes
