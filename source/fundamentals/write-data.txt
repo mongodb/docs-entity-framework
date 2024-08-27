@@ -23,11 +23,19 @@ Overview
 {+framework-core+} allows you to work with data in your application without
 explicitly running database commands. You can insert, update, or delete data
 within your application and persist those changes to MongoDB by using the
-``SaveChanges()`` method.
+``SaveChanges()`` or ``SaveChangesAsync()`` method.
 
-When you call the ``SaveChanges()`` method, the {+provider-short+} automatically detects
+When you call the ``SaveChanges()`` or ``SaveChangesAsync()`` method, the {+provider-short+} automatically detects
 any changes made to your data and runs the necessary commands to update the
 database by using the MongoDB Query API.
+
+The ``SaveChanges()`` and ``SaveChangesAsync()`` methods are transactional by
+default. This means that if an error occurs during the operation, the provider
+rolls back any changes made to the database. Because of this, your application
+must be connected to a transaction-capable instance of a MongoDB server, such as
+a replica set. You can disable transactions during write operations bt setting the ``Database.AutoTransactionBehavior =
+AutoTrasactionBehavior.Never`` on your ``DbContext`` subclass during your
+application setup.
 
 In this guide, you can see examples of how to perform common write operations on
 an application configured to use the {+provider-short+}.
