@@ -22,9 +22,9 @@ Overview
 
 In this guide, you can learn how to use **optimistic concurrency control** with the
 {+provider-short+}. Optimistic concurrency control ensures that data is not
-overwritten between the time an application reads it, and the time the
+overwritten between the time an application reads it and the time the
 application writes it back to the database. The {+provider-short+} supports two
-methods for implementing optimistic concurrency control:
+ways to implement optimistic concurrency control:
 
 - Concurrency tokens, by using the ``ConcurrencyCheck`` attribute or the
   ``IsConcurrencyToken()`` fluent API method
@@ -35,7 +35,12 @@ Concurrency Tokens
 ------------------
 
 You can ensure optimistic concurrency on a specified property by using a
-concurrency token. You can configure a concurrency token by specifying the ``ConcurrencyCheck``
+concurrency token. When querying the entity, the {+provider-short+} tracks the concurrency token.
+Then, when the provider calls the ``SaveChanges()`` or ``SaveChangesAsync()``
+method, it compares the value of the concurrency token the value saved in
+the database to ensure that the original value hasn't changed.
+
+You can configure a concurrency token by specifying the ``ConcurrencyCheck``
 attribute when defining a class. The following example shows how to specify the
 ``ConcurrencyCheck`` attribute on the ``LastModified`` property of a ``Customer`` class:
 
