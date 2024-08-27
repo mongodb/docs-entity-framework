@@ -22,9 +22,9 @@ Overview
 
 In this guide, you can learn how to use **optimistic concurrency control** with the
 {+provider-short+}. Optimistic concurrency control ensures that data is not
-overwritten between the time an application reads it, and the time it writes it
-back to the database. The {+provider-short+} supports two methods for
-implementing optimistic concurrency control:
+overwritten between the time an application reads it, and the time the
+application writes it back to the database. The {+provider-short+} supports two
+methods for implementing optimistic concurrency control:
 
 - Concurrency tokens, by using the ``ConcurrencyCheck`` attribute or the
   ``IsConcurrencyToken()`` fluent API method
@@ -34,7 +34,7 @@ implementing optimistic concurrency control:
 Concurrency Tokens
 ------------------
 
-You can ensure optimistic concurrency control on a specified property by using a
+You can ensure optimistic concurrency on a specified property by using a
 concurrency token. You can configure a concurrency token by specifying the ``ConcurrencyCheck``
 attribute when defining a class. The following example shows how to specify the
 ``ConcurrencyCheck`` attribute on the ``LastModified`` property of a ``Customer`` class:
@@ -51,7 +51,7 @@ attribute when defining a class. The following example shows how to specify the
        public DateTimeOffset LastModified { get; set; }
    }
 
-You can also configure the concurrency token by using the
+You can also configure a concurrency token by using the
 ``IsConcurrencyToken()`` method. Call the ``IsConcurrencyToken()`` method in the
 ``OnModelCreating()`` method of the ``DbContext`` class, as shown in the
 following example:
@@ -63,19 +63,19 @@ following example:
    :emphasize-lines: 4-6
 
 The {+provider-short+} supports setting concurrency tokens on any property type
-that supported by the driver. You can also set multiple concurrency tokens on a
+supported by the driver. You can also set multiple concurrency tokens on a
 single entity. If you need to update a concurrency token, you must do so
 manually.
 
 Row Versioning
 --------------
 
-You can also ensure optimistic concurrency control by using row versioning. Row
-versioning allows you to track changes to a row by using a version number that
-updates automatically. You can configure row versioning by specifying the
-``Timestamp`` attribute when defining a class. The following example shows how
-to specify the ``Timestamp`` attribute on the ``Version`` property of a
-``Customer`` class:
+You can ensure optimistic concurrency by using row versioning. Row
+versioning allows you to track changes to an entity by specifying a version field that
+increments automatically when the entity changes. You can configure row
+versioning by specifying the ``Timestamp`` attribute when defining a class. The
+following example shows how to specify the ``Timestamp`` attribute on the
+``Version`` property of a ``Customer`` class:
 
 .. code-block:: csharp
    :emphasize-lines: 6-7
@@ -99,20 +99,23 @@ Call the ``IsRowVersion()`` method in the ``OnModelCreating()`` method of the
    :language: csharp
    :emphasize-lines: 4-6
 
-The {+provider-short+} supports setting row versioning on only a single property
+The {+provider-short+} supports row versioning on only a single property
 of an entity. The property must be of type ``long``, ``int``, ``ulong``, or
 ``uint``.
 
 Limitations
 -----------
 
-If your database shares data with other applications, those applications must also
-support the same mechanisms you are using for optimistic concurrency control.
-They must support checks for concurrency tokens and row version fields in any
-update or delete operation. If you are using row versioning, other applications
-must map row versioned fields to the property name followed by the string:
-``_version``. The application must increment the field's value by 1 for each
-update.
+Consider the following limitations when configuring optimistic concurrency
+control on a database that shares data with other applications:
+
+- Other applications must support the same mechanisms you are using for
+  optimistic concurrency control in your {+framework-core+} application.
+- Other applications must support checks for concurrency tokens and row version
+  fields during any update or delete operation.
+- If you are using row versioning, other applications must map row versioned
+  fields to the property's name followed by the string: ``_version``. The
+  application must increment the field's value by 1 for each update.
 
 Additional Information
 ----------------------

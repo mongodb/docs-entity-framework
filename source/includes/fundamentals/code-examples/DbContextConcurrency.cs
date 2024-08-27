@@ -3,7 +3,7 @@ protected override void OnModelCreating(ModelBuilder modelBuilder)
 {
     base.OnModelCreating(modelBuilder);
     modelBuilder.Entity<Customer>()
-       .Property(p => p.UnitsInStock)
+       .Property(p => p.LastModified)
        .IsConcurrencyToken();
 }
 // end-concurrency-token
