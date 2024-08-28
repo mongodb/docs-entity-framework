@@ -46,8 +46,8 @@ rolls back any changes made to the database. Because of this, your application
 must be connected to a transaction-capable deployment of MongoDB server, such as
 a replica set.
 
-You can disable automatic transactions in ``SaveChanges()`` and
-``SaveChangesAsync()`` by setting the ``AutoTransactionBehavior`` property to
+You can disable automatic transactions in the ``SaveChanges()`` and
+``SaveChangesAsync()`` methods by setting the ``AutoTransactionBehavior`` property to
 ``AutoTransaction.Never`` on your ``DbContext`` subclass during application
 setup. However, we do not recommend disabling this feature. Doing so causes
 any concurrency changes or operation failures during the save operation
