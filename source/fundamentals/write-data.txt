@@ -33,9 +33,13 @@ The ``SaveChanges()`` and ``SaveChangesAsync()`` methods are transactional by
 default. This means that if an error occurs during the operation, the provider
 rolls back any changes made to the database. Because of this, your application
 must be connected to a transaction-capable instance of a MongoDB server, such as
-a replica set. You can disable transactions during write operations bt setting the ``Database.AutoTransactionBehavior =
-AutoTrasactionBehavior.Never`` on your ``DbContext`` subclass during your
-application setup.
+a replica set. You can disable transactions during write operations by setting
+the ``AutoTransactionBehavior`` property to ``AutoTransaction.Never`` on your
+``DbContext`` subclass during application setup, as shown in the following example:
+
+.. code-block:: csharp
+
+   dbContext.Database.AutoTransactionBehavior = AutoTransactionBehavior.Never;
 
 In this guide, you can see examples of how to perform common write operations on
 an application configured to use the {+provider-short+}.
