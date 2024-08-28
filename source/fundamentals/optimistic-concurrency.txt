@@ -31,6 +31,11 @@ ways to implement optimistic concurrency control:
 - Row versioning, by using the ``Timestamp`` attribute or the
   ``IsRowVersion()`` fluent API method
 
+.. tip::
+
+   We recommend ensuring optimistic concurrency by using only one of the
+   preceding implementations per entity.
+
 Concurrency Tokens
 ------------------
 
