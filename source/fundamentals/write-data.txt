@@ -60,6 +60,11 @@ The following example shows how to disable automatic transactions in the
 
    dbContext.Database.AutoTransactionBehavior = AutoTransactionBehavior.Never;
 
+.. warning::
+
+   Disabling automatic transactions can lead to data inconsistencies. We
+   recommend that you do not disable this feature.
+
 Insert
 ------
 
