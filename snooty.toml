@@ -31,6 +31,7 @@ docs-branch = "master"                                                          
 version-number = "8.2"                                                            # always set this to the driver branch (i.e. 1.7.0, 1.8.0, etc.)
 full-version = "{+version-number+}.1"
 version = "v{+version-number+}"
+ef-core-version = "8.0"
 stable-api = "Stable API"
 bool-data-type = "``boolean``"
 string-data-type = "``string``"
@@ -38,6 +39,7 @@ int-data-type = "``integer``"
 not-available = "N/A"
 package = "MongoDB.EntityFrameworkCore"
 api-root = "https://mongodb.github.io/mongo-efcore-provider/{+full-version+}/api"
+driver-api-root = "https://mongodb.github.io/mongo-csharp-driver/3.0.0/api"
 
 [[banners]]
 targets = ["index.txt"]
