@@ -42,8 +42,27 @@ The 8.2.1 provider release includes the following new features:
   properties that aren't defined in your .NET entity class but are
   included in the {+framework-core+} model and mapped to the database.
 
-- Adds support for creating indexes on one or more properties when you call the
-  ``CreateDatabase()`` or ``CreateDatabaseAsync()`` method.
+- Adds support for using the 
+  `HasIndex() <https://learn.microsoft.com/en-us/dotnet/api/microsoft.entityframeworkcore.metadata.builders.entitytypebuilder-1.hasindex?view=efcore-{+ef-core-version+}>`__ 
+  {+framework+} Fluent API method to create indexes for a property when you create
+  a database.
+
+  The following example shows how to specify indexes for the ``Customer.Name``,
+  ``Order.OrderRef``, ``Address.ZipCode``, and ``Documents.DocRef`` properties:
+
+  .. code-block:: csharp
+
+     var context = MyContext.CreateCollectionOptions(database.MongoDatabase, mb =>
+     {
+         mb.Entity<Customer>().HasIndex(c => c.Name);
+         mb.Entity<Order>().HasIndex(o => o.OrderRef).IsUnique();
+         mb.Entity<Address>().HasIndex(o => o.ZipCode, "custom_index_name");
+         mb.Entity<Documents>()
+           .HasIndex(d => d.DocRef)
+           .HasCreateIndexOptions(new CreateIndexOptions { Sparse = true });
+     });
+
+     var result = client.CreateDatabase(context.GetService<IDesignTimeModel>());
 
 - Adds support for the `MQL.Exists() <{+driver-api-root+}/MongoDB.Driver/MongoDB.Driver.Mql.Exists.html>`__,
   `MQL.IsMissing() <{+driver-api-root+}/MongoDB.Driver/MongoDB.Driver.Mql.IsMissing.html>`__,
