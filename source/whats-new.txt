@@ -62,7 +62,7 @@ The 8.2.1 provider release includes the following new features:
            .HasCreateIndexOptions(new CreateIndexOptions { Sparse = true });
      });
 
-     var result = client.CreateDatabase(context.GetService<IDesignTimeModel>());
+     var result = context.Database.EnsureCreated();
 
 - Adds support for the `MQL.Exists() <{+driver-api-root+}/MongoDB.Driver/MongoDB.Driver.Mql.Exists.html>`__,
   `MQL.IsMissing() <{+driver-api-root+}/MongoDB.Driver/MongoDB.Driver.Mql.IsMissing.html>`__,
