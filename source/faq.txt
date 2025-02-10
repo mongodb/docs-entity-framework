@@ -58,7 +58,7 @@ you can manage indexes in your application by using the {+csharp-driver-short+}
 directly. To use {+csharp-driver-short+} methods in your {+provider-short+}
 application, use the ``MongoClient`` to call the methods.
 
-The following example creates an index on a collection by using
+The following example creates indexes on a collection by using
 {+csharp-driver-short+} methods:
 
 .. literalinclude:: /includes/code-examples/faq.cs
@@ -66,6 +66,6 @@ The following example creates an index on a collection by using
    :start-after: start-create-index
    :end-before: end-create-index
 
-To learn more about creating indexes with the {+csharp-driver-short+}, see the
+To learn more about creating indexes with the driver, see the
 `Indexes guide <{+driver-docs-root+}/fundamentals/indexes/>`__ in the
 {+csharp-driver-long+} documentation.
