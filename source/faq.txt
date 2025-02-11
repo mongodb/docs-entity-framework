@@ -55,8 +55,9 @@ How Can I Manage Indexes with the {+provider-short+}?
 
 Because the {+provider-short+} is built on top of the {+csharp-driver-short+},
 you can manage indexes in your application by using the {+csharp-driver-short+}
-directly. To use {+csharp-driver-short+} methods in your {+provider-short+}
-application, use the ``MongoClient`` to call the methods.
+directly. To use driver methods in your {+provider-short+}
+application, call them by using the ``MongoClient`` used to set up your
+``DbContext``.
 
 The following example creates indexes on a collection by using
 {+csharp-driver-short+} methods:
