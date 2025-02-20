@@ -48,7 +48,7 @@ The {+provider-short+} supports the following types of indexes:
 The examples in this guide use the sample application created in the
 :ref:`<entity-framework-quickstart>` guide. After you set up the quick start
 application, you can run the examples in this guide by adding the code to the
-``OnModelCreating`` method of the ``PlanetDbContext``, as shown in the following
+``OnModelCreating()`` method of the ``PlanetDbContext``, as shown in the following
 example:
 
 .. literalinclude:: /includes/fundamentals/code-examples/indexes.cs
@@ -58,7 +58,9 @@ example:
 
 .. note::
 
-   You cannot modify or delete indexes by using the {+provider-short+}. If you
+   The {+provider-short+} creates your indexes when you call the
+   ``Database.EnsureCreated()`` method. You cannot modify or delete indexes by
+   using the provider after they are created. If you 
    need to modify or delete an index in your application, you must do so by using the
    {+csharp-driver-short+} directly. 
 
@@ -88,9 +90,9 @@ creates a single field index on a ``Planet`` entity:
 Compound Index
 ~~~~~~~~~~~~~~
 
-:manual:`Compound indexes </core/indexes/index-types/index-compound>` are indexes that hold references to multiple fields within a
-collection's documents. These indexes improve multi-field query and sort
-performance.
+:manual:`Compound indexes </core/indexes/index-types/index-compound>` are
+indexes that combine multiple fields within a collection's documents.
+These indexes improve multi-field query and sort performance.
 
 You can create a compound index by calling the ``HasIndex()`` method with a
 lambda expression that specifies the fields to index. The following example
@@ -104,9 +106,9 @@ creates a compound index on a ``Planet`` entity:
 Unique Index
 ~~~~~~~~~~~~
 
-Unique indexes ensure that the indexed fields don't store duplicate values. by
-default, MongoDB creates a unique index on the ``_id`` field during the creating
-of a collection.
+Unique indexes ensure that multiple documents don't contain the same value for the
+indexed field. By default, MongoDB creates a unique index on the ``_id`` field
+during the creation of a collection.
 
 You can create a unique index by creating an index by using the
 ``HasIndex()`` methods as shown in the preceding sections, then chaining the
@@ -121,13 +123,14 @@ You can create a unique index by creating an index by using the
 Index Options
 -------------
 
-You can modify your index by specifying options when creating the index. The
-following sections describe options that you can specify for your index.
+You can specify additional options when creating your index. The following
+sections describe some of the options that you can specify.
 
 Named Index
 ~~~~~~~~~~~
 
-By default, MongoDB creates an index with a generated name. To specify a custom name
+By default, MongoDB creates an index with a generated name based on the fields
+and options for the index. To specify a custom name
 for the index, pass in the name as a string when you create the index. The
 following example creates a compound index on the ``Planet`` entity with the
 name ``"named_order"``:
@@ -158,7 +161,7 @@ descending order. The following example creates a descending index on a
 MongoDB-Specific Options
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
-You can specify MongoDB-specific options when creating an index by calling the
+You can specify additional MongoDB-specific options when creating an index by using the
 ``HasCreateIndexOptions()`` method and passing in an instance of the
 ``CreateIndexOptions`` class of the {+csharp-driver-short+}. You can pass in any
 options that the ``CreateIndexOptions`` class supports. To learn more about
