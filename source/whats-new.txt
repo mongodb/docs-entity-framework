@@ -19,7 +19,7 @@ What's New
 
 Learn what's new in:
 
-* :ref:`Version 8.2.2 <entity-framework-version-8.2.3>`
+* :ref:`Version 8.2.3 <entity-framework-version-8.2.3>`
 * :ref:`Version 8.2.2 <entity-framework-version-8.2.2>`
 * :ref:`Version 8.2.1 <entity-framework-version-8.2.1>`
 * :ref:`Version 8.2 <entity-framework-version-8.2>`
@@ -33,6 +33,9 @@ Learn what's new in:
    are made in minor version releases.
 
 .. _entity-framework-version-8.2.3:
+
+What's New in 8.2.3
+-------------------
 
 The 8.2.3 provider release includes the following new features:
 
