@@ -20,7 +20,7 @@ Optimize Queries with Indexes
 Overview
 --------
 
-In this guide, you can learn how to use **indexes** in the {+provider-short+}.
+In this guide, you can learn how to define **indexes** in the {+provider-short+}.
 Indexes can improve the efficiency of queries and add additional functionality
 to querying and storing documents.
 
@@ -58,7 +58,7 @@ example:
 .. note::
 
    The {+provider-short+} creates your indexes when you call the
-   ``Database.EnsureCreated()`` method. You cannot modify or delete indexes by
+   ``dbContext.Database.EnsureCreated()`` method. You cannot modify or delete indexes by
    using the provider after they are created. If you 
    need to modify or delete an index in your application, you must use the
    {+csharp-driver-short+} directly. 
