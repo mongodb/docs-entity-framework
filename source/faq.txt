@@ -53,8 +53,13 @@ change tracking, entity-based LINQ operations, and modeling familiar to
 How Can I Manage Indexes with the {+provider-short+}?
 -----------------------------------------------------
 
+You can create indexes with the {+provider-short+} by calling the ``HasIndex()``
+method in the ``OnModelCreating()`` method of your ``DbContext`` class. To learn
+more about how to create indexes with the {+provider-short+}, see the
+:ref:`Indexes <entity-framework-indexes>` guide.
+
 Because the {+provider-short+} is built on top of the {+csharp-driver-short+},
-you can manage indexes in your application by using the {+csharp-driver-short+}
+you can also manage indexes in your application by using the {+csharp-driver-short+}
 directly. To use driver methods in your {+provider-short+}
 application, call them on the ``MongoClient`` used to set up your
 ``DbContext``.
