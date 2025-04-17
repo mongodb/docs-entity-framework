@@ -19,7 +19,7 @@ What's New
 
 Learn what's new in:
 
-* :ref:`Version 8.3.0 <entity-framework-version-8.3>`
+* :ref:`Version 8.3 <entity-framework-version-8.3>`
 * :ref:`Version 8.2.3 <entity-framework-version-8.2.3>`
 * :ref:`Version 8.2.2 <entity-framework-version-8.2.2>`
 * :ref:`Version 8.2.1 <entity-framework-version-8.2.1>`
