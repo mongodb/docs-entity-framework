@@ -71,7 +71,7 @@ You can take action to address this discrepency in one of two ways:
   operation.
 
   For example, you can convert a ``dateOfBirth`` element in a collection named
-  ``people`` from a BSON ``date`` into BSON ``init`` as shown in the following
+  ``people`` from a BSON ``date`` into BSON ``int`` as shown in the following
   code:
 
   .. code-block:: csharp
