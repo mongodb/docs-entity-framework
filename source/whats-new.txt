@@ -41,7 +41,7 @@ What's New in 9.0
 
 The 9.0 provider release includes the following new features:
 
-- New features and changes also included in the 8.3 release
+- New features and changes also included in the :ref:`8.3 release <entity-framework-version-8.3>`
 
 - Upgrades the {+framework-core+} version dependency to 9.0
 
