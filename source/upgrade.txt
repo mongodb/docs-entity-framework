@@ -56,7 +56,7 @@ Version 8.30.0 Breaking Changes
 Version 8.3.0 of the {+provider-short+} introduces a breaking change that
 corrects the handling of nullable properties configured with an alternative BSON
 representation. In previous versions, configurations set by the
-``[BsonRepresentation]`` attribute or ``HasBsonRepresentation()`` fluent API
+``[BsonRepresentation]`` attribute or the ``HasBsonRepresentation()`` fluent API
 were not applied. 
 
 You can take action to address this discrepency in one of two ways:

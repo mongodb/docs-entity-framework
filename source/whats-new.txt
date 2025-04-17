@@ -42,7 +42,7 @@ The 8.3 provider release includes the following new features:
 
 - Add support for setting BSON representation on ``PropertiesConfigurationBuilder``.
 
-- Add support for configuration-level for ``HasDateTimeKind()``.
+- Add configuration-level support for ``HasDateTimeKind()``.
 
 - Changes behavior to apply ``HasBsonRepresentation`` to nullable properties. To
   learn more, see :ref:`entity-framework-breaking-changes-v8.3` in the
