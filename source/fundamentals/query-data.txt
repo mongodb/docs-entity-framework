@@ -188,7 +188,7 @@ Count
 ~~~~~
 
 The following example uses the ``Count()`` method to count the number of planets in the
-``Planets`` collection.
+``Planets`` collection:
 
 .. literalinclude:: /includes/fundamentals/code-examples/aggregation.cs
    :language: csharp
