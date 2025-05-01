@@ -174,13 +174,13 @@ Scalar Aggregations
 
 The {+provider-short+} supports the following scalar aggregation methods:
 
-- ``Count()``: Returns the number of elements in a collection.
-- ``LongCount()``: Returns the number of elements in a collection as a long integer.
-- ``Any()``: Returns ``true`` if any elements in a collection match the search criteria.
-- ``Max()``: Returns the maximum value of a specified field in a collection.
-- ``Min()``: Returns the minimum value of a specified field in a collection.
-- ``Sum()``: Returns the sum of a specified field in a collection.
-- ``Average()``: Returns the average of a specified field in a collection.
+- ``Count()``: Returns the number of elements in a collection
+- ``LongCount()``: Returns the number of elements in a collection as a ``long``
+- ``Any()``: Returns ``true`` if any elements in a collection match the search criteria
+- ``Max()``: Returns the maximum value of a specified field in a collection
+- ``Min()``: Returns the minimum value of a specified field in a collection
+- ``Sum()``: Returns the sum of a specified field in a collection
+- ``Average()``: Returns the average of a specified field in a collection
 
 The following sections show examples of each of the preceding methods.
 
@@ -191,6 +191,7 @@ The following example uses the ``Count()`` method to count the number of planets
 ``Planets`` collection.
 
 .. literalinclude:: /includes/fundamentals/code-examples/aggregation.cs
+   :language: csharp
    :start-after: // start-count
    :end-before: // end-count
 
@@ -201,6 +202,7 @@ The following example uses the ``LongCount()`` method to count the number of
 planets in the ``Planets`` collection and returns the result as a ``long``:
 
 .. literalinclude:: /includes/fundamentals/code-examples/aggregation.cs
+   :language: csharp
    :start-after: // start-long-count
    :end-before: // end-long-count
 
@@ -211,6 +213,7 @@ The following example uses the ``Any()`` method to check if any planets in the
 ``Planets`` collection have a ``hasRings`` field set to ``true``:
 
 .. literalinclude:: /includes/fundamentals/code-examples/aggregation.cs
+   :language: csharp
    :start-after: // start-any
    :end-before: // end-any
 
@@ -221,6 +224,7 @@ The following example uses the ``Max()`` method to find the maximum value of the
 ``orderFromSun`` field in the ``Planets`` collection:
 
 .. literalinclude:: /includes/fundamentals/code-examples/aggregation.cs
+   :language: csharp
    :start-after: // start-max
    :end-before: // end-max
 
@@ -231,6 +235,7 @@ The following example uses the ``Min()`` method to find the minimum value of the
 ``orderFromSun`` field in the ``Planets`` collection:
 
 .. literalinclude:: /includes/fundamentals/code-examples/aggregation.cs
+   :language: csharp
    :start-after: // start-min
    :end-before: // end-min
 
@@ -238,19 +243,21 @@ Sum
 ~~~
 
 The following example uses the ``Sum()`` method to find the sum of the
-``Mass`` field in the ``Planets`` collection:
+``mass`` field in the ``Planets`` collection:
 
 .. literalinclude:: /includes/fundamentals/code-examples/aggregation.cs
+   :language: csharp
    :start-after: // start-sum
    :end-before: // end-sum
 
 Average
-~~~~~~
+~~~~~~~
 
 The following example uses the ``Average()`` method to find the average value of
-the ``Mass`` field in the ``Planets`` collection:
+the ``mass`` field in the ``Planets`` collection:
 
 .. literalinclude:: /includes/fundamentals/code-examples/aggregation.cs
+   :language: csharp
    :start-after: // start-average
    :end-before: // end-average
 
