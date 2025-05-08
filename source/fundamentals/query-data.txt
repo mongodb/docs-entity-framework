@@ -179,15 +179,15 @@ The {+provider-short+} supports the following scalar aggregation methods:
 - ``Any()``: Returns ``true`` if any elements in a collection match the search criteria
 - ``Max()``: Returns the maximum value of a specified field in a collection
 - ``Min()``: Returns the minimum value of a specified field in a collection
-- ``Sum()``: Returns the sum of a specified field in a collection
-- ``Average()``: Returns the average of a specified field in a collection
+- ``Sum()``: Returns the sum of values of a specified field in a collection
+- ``Average()``: Returns the average of values of a specified field in a collection
 
 The following sections show examples of each of the preceding methods.
 
 Count
 ~~~~~
 
-The following example uses the ``Count()`` method to count the number of planets in the
+The following example uses the ``Count()`` method to count the number of elements in the
 ``Planets`` collection:
 
 .. literalinclude:: /includes/fundamentals/code-examples/aggregation.cs
@@ -199,7 +199,7 @@ LongCount
 ~~~~~~~~~
 
 The following example uses the ``LongCount()`` method to count the number of
-planets in the ``Planets`` collection and returns the result as a ``long``:
+elements in the ``Planets`` collection and returns the result as a ``long``:
 
 .. literalinclude:: /includes/fundamentals/code-examples/aggregation.cs
    :language: csharp
@@ -209,7 +209,7 @@ planets in the ``Planets`` collection and returns the result as a ``long``:
 Any
 ~~~
 
-The following example uses the ``Any()`` method to check if any planets in the
+The following example uses the ``Any()`` method to check if any elements in the
 ``Planets`` collection have a ``hasRings`` field set to ``true``:
 
 .. literalinclude:: /includes/fundamentals/code-examples/aggregation.cs
