@@ -81,9 +81,9 @@ Can I Access {+csharp-driver-short+} Features in the {+provider-short+}?
 ------------------------------------------------------------------------
 
 You can use the {+csharp-driver-short+} directly in your {+provider-short+}
-application by calling the driver methods on the ``MongoClient`` used to set up
+application by calling driver methods on the ``MongoClient`` used to set up
 your ``DbContext``. The {+provider-short+} is built on top of the
-{+csharp-driver-short+}, so you can use most driver features in your
+{+csharp-driver-short+}, so you can use all driver features in your
 application. For example, you can use the driver to perform an Atlas Search
 query as shown in the following example:
 
