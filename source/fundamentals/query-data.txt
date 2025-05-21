@@ -174,9 +174,11 @@ Scalar Aggregations
 
 The {+provider-short+} supports the following scalar aggregation methods:
 
-- ``Count()``: Returns the number of elements in a collection
+- ``Count()``: Returns the number of elements in a collection or the number of
+  documents that match a predicate
 - ``LongCount()``: Returns the number of elements in a collection as a ``long``
-- ``Any()``: Returns ``true`` if any elements in a collection match the search criteria
+  or the number of documents that match a predicate
+- ``Any()``: Returns ``true`` if any elements in a collection match the predicate
 - ``Max()``: Returns the maximum value of a specified field in a collection
 - ``Min()``: Returns the minimum value of a specified field in a collection
 - ``Sum()``: Returns the sum of values of a specified field in a collection
@@ -195,6 +197,14 @@ The following example uses the ``Count()`` method to count the number of element
    :start-after: // start-count
    :end-before: // end-count
 
+The following example uses the ``Count()`` method to count the number of elements in the
+``Planets`` collection that have a ``hasRings`` field set to ``true``:
+
+.. literalinclude:: /includes/fundamentals/code-examples/aggregation.cs
+   :language: csharp
+   :start-after: // start-count-predicate
+   :end-before: // end-count-predicate
+
 LongCount
 ~~~~~~~~~
 
@@ -205,6 +215,15 @@ elements in the ``Planets`` collection and returns the result as a ``long``:
    :language: csharp
    :start-after: // start-long-count
    :end-before: // end-long-count
+
+The following example uses the ``LongCount()`` method to count the number of
+elements in the ``Planets`` collection that have a ``hasRings`` field set to
+``true`` and returns the result as a ``long``:
+
+.. literalinclude:: /includes/fundamentals/code-examples/aggregation.cs
+   :language: csharp
+   :start-after: // start-long-count-predicate
+   :end-before: // end-long-count-predicate
 
 Any
 ~~~

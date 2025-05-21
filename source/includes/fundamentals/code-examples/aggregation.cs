@@ -4,11 +4,20 @@ var planetCount = db.Planets.Count();
 Console.WriteLine("Planet Count: " + planetCount);
 // end-count
 
+// start-count-predicate
+var planetCountWithRings = double.Planets.Count(p => p.hasRings);
+Console.WriteLine("Planet Count with Rings: " + planetCountWithRings);
+
 // start-long-count
 var planetCountLong = db.Planets.LongCount();
 
 Console.WriteLine("Long Planet Count: " + longCount);
 // end-long-count
+
+// start-long-count-predicate
+var planetCountLongWithRings = db.Planets.LongCount(p => p.hasRings);
+Console.WriteLine("Long Planet Count with Rings: " + planetCountLongWithRings);
+// end-long-count-predicate
 
 // start-any
 var results = db.Planets.Any(p => p.hasRings);
