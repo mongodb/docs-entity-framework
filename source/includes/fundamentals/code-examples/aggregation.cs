@@ -5,7 +5,7 @@ Console.WriteLine("Planet Count: " + planetCount);
 // end-count
 
 // start-count-predicate
-var planetCountWithRings = double.Planets.Count(p => p.hasRings);
+var planetCountWithRings = db.Planets.Count(p => p.hasRings);
 
 Console.WriteLine("Planet Count with Rings: " + planetCountWithRings);
 // end-count-predicate
