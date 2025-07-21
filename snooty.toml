@@ -1,3 +1,5 @@
+eol = true
+
 name = "entity-framework"
 title = "Entity Framework"
 toc_landing_pages = [
@@ -36,3 +38,11 @@ string-data-type = "``string``"
 int-data-type = "``integer``"
 not-available = "N/A"
 package = "MongoDB.EntityFrameworkCore"
+docs-url = "http://mongodb.com/docs/entity-framework/current"
+
+[[banners]]
+targets = ["*"]
+variant = "info"
+value = """\
+    This version of the documentation is archived and no longer supported. View the `current documentation <{+docs-url+}>`__ to learn how to `upgrade your version of the {+provider-short+} <{+docs-url+}/upgrade/>`__.\
+    """
