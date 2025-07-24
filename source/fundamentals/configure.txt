@@ -1,8 +1,8 @@
 .. _entity-framework-configure:
 
-===========================================
-Configure Entity Framework Core for MongoDB
-===========================================
+==============================
+Configure the {+provider-short+}
+==============================
 
 .. facet::
    :name: genre
@@ -10,6 +10,7 @@ Configure Entity Framework Core for MongoDB
 
 .. meta::
    :keywords: EF, EF Core, code example
+   :description: Learn how to configure an application to use the MongoDB Entity Framework Core Provider, including creating POCOs and DB context classes.
 
 .. contents:: On this page
    :local:

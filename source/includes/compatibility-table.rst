@@ -7,7 +7,12 @@
      - .NET Version
      - MongoDB Version
 
-   * - **{+version-number+}**
-     - **7.0**
-     - **7.0 or later**
-     - **3.6 or later**
+   * - **{+full-version+}**
+     - **{+ef-core-version+}**
+     - **8.0 or later**
+     - **5.0 or later**
+
+   * - **8.1.0 - 8.3.0**
+     - **8.0**
+     - **8.0 or later**
+     - **5.0 or later**

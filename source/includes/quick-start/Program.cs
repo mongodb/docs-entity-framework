@@ -1,5 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using MongoDB.Bson;
+using MongoDB.Bson.Serialization.Attributes;
 using MongoDB.Driver;
 using MongoDB.EntityFrameworkCore.Extensions;
 
@@ -11,13 +12,12 @@ if (connectionString == null)
     Environment.Exit(0);
 }
 var client = new MongoClient(connectionString);
-
 var db = MflixDbContext.Create(client.GetDatabase("sample_mflix"));
 
-var movie = db.Movies.First(m => m.title == "Back to the Future");
-Console.WriteLine(movie.plot);
+var movie = db.Movies.First(m => m.Title == "Back to the Future");
+Console.WriteLine(movie.Plot);
 
-internal class MflixDbContext : DbContext
+public class MflixDbContext : DbContext
 {
     public DbSet<Movie> Movies { get; init; }
 
@@ -39,10 +39,17 @@ internal class MflixDbContext : DbContext
     }
 }
 
-internal class Movie
+public class Movie
 {
+    [BsonId]
     public ObjectId _id { get; set; }
-    public string title { get; set; }
-    public string rated { get; set; }
-    public string plot { get; set; }
+
+    [BsonElement("title")]
+    public string Title { get; set; }
+
+    [BsonElement("rated")]
+    public string Rated { get; set; }
+
+    [BsonElement("plot")]
+    public string Plot { get; set; }
 }

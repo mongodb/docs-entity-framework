@@ -2,13 +2,20 @@
 {+provider-long+}
 ========================================
 
+.. meta::
+   :description: Explore the MongoDB Entity Framework Core Provider to integrate MongoDB with .NET applications using Entity Framework Core for data access and manipulation.
+
 .. toctree::
 
-   /quick-start
-   /quick-reference
-   /fundamentals
-   /limitations
-   /issues-and-help
+   Quick Start </quick-start>
+   Quick Reference </quick-reference>
+   Fundamentals </fundamentals>
+   Limitations </limitations>
+   Issues & Help </issues-and-help>
+   FAQ </faq>
+   What's New </whats-new>
+   Upgrade </upgrade>
+   API Documentation <{+api-root+}>
 
 Introduction
 ------------
@@ -22,7 +29,7 @@ running database commands. The {+provider-short+} tracks any queries or data
 changes you make, and automatically runs them on the database by using the
 MongoDB Query API.
 
-Use the {+provider-long+} if you want to build a {+language-dotnet+} application
+Use the {+provider-short+} if you want to build a {+language-dotnet+} application
 that uses {+framework-core+} with MongoDB.
 
 Download the provider by using `NuGet <https://www.nuget.org/packages/{+package+}>`__,
@@ -40,6 +47,25 @@ Quick Reference
 
 See driver syntax examples for common MongoDB commands in the
 :ref:`Quick Reference <entity-framework-quick-reference>` section.
+
+What's New
+----------
+
+For a list of new features and changes in each version, see the :ref:`<entity-framework-whats-new>` section.
+
+Upgrade Provider Version
+------------------------
+
+Learn what changes you might need to make to your application to upgrade the
+provider version in the :ref:`entity-framework-upgrade-provider` section.
+
+API Documentation
+-----------------
+
+For detailed information about types and methods in the {+provider-short+}, see
+the `{+provider-short+} API documentation <{+api-root+}>`__.
+
+.. _entity-framework-compatibility:
 
 Compatibility
 -------------
